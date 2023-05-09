@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PedareNow - Option</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    p {
+      margin-bottom: 20px;
+    }
+    
+    .chat-container {
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .chat-log {
+      max-height: 200px;
+      overflow-y: scroll;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    
+    .message-input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      margin-top: 10px;
+    }
+    
+    .send-button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 3px;
+      margin-top: 10px;
+    }
+    
+    .send-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <script>
+    function sendMessage() {
+      var inputElement = document.getElementById("message-input");
+      var message = inputElement.value;
+      logMessage("You: " + message);
+      inputElement.value = "";
+    }
+    
+    function logMessage(message) {
+      var logElement = document.getElementById("chat-log");
+      logElement.innerHTML += "<div>" + message + "</div>";
+      logElement.scrollTop = logElement.scrollHeight;
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Option Page</h1>
+    
+    <p>Welcome to the Option page! Here, you can customize your preferences and settings.</p>
+    
+    <div class="chat-container">
+      <h2>Chat</h2>
+      <div id="chat-log" class="chat-log"></div>
+      <input type="text" id="message-input" class="message-input" placeholder="Type your message">
+      <button onclick="sendMessage()" class="send-button">Send</button>
+    </div>
+    
+    <a href="timetable.html">Go to Timetable</a>
+    <a href="subjects.html">Go to Subjects</a>
+  </div>
+</body>
+</html>
